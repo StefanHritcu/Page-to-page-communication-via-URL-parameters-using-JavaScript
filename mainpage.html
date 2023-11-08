@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="nav_menu">
+            <div class="logo_dataLogin">
+                <h1 class="logo">Welcome: </h1>
+                <h1 class="login_data"></h1>
+            </div>
+            <div class="nav_list">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <a class="log_out" href="index.html">Logout</a>
+        </nav>
+    </header>
+
+    <main class="main">
+       
+        <article class="main__article">
+            <h1>Scroll Down <i class="fa fa-arrow-down"></i></h1>
+            <h1>Scroll Down <i class="fa fa-arrow-down"></i></h1>
+            <h1>Scroll Down <i class="fa fa-arrow-down"></i></h1>
+            <h2 class="main__lastH2">And Now <span>click</span> on this button to go to the top <i class="fa fa-arrow-right"></i></h2>
+
+            
+            
+        </article>
+        <a href="#" class="main__scrollToTop">
+            <i class="fa fa-arrow-up"></i>
+            UP
+    
+        </a>
+        
+    </main>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginDataElement = document.querySelector('.login_data');
+
+            // Leggi il parametro dalla URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const loginDataText = urlParams.get('loginData');
+
+            if (loginDataText) {
+                // Inserisci il testo nell'elemento desiderato
+                loginDataElement.textContent = decodeURIComponent(loginDataText);
+            }
+        });
+
+        //ScrollonTopLink
+
+        document.addEventListener("DOMContentLoaded", function(){
+            const scrollTop = document.querySelector(".main__scrollToTop");
+
+            window.addEventListener("scroll", function(){
+                if(window.scrollY >= 200){
+                    scrollTop.style.display = "block";
+                }else{
+                    scrollTop.style.display = "none";
+                }
+            })
+        })
+    
+    </script>
+</body>
+</html>

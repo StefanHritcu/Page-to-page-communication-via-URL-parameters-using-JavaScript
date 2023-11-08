@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register using JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <img src="landscape.jpg" class="bg-image" alt="">
+    
+    <main class="main">
+
+        <div class="container_login">
+            <h2 class="title">Login</h2>
+            <form action="" class="form_login">
+                <fieldset class="fieldset">
+                    <legend class="legend">User Data</legend>
+
+                    <div class="inputs">
+                        <label for="name"></label>
+                        <input id="name" class="name_surname" type="text" placeholder="Name">
+                            <br>
+                        <label for="surname"></label>
+                        <input id="surname" class="name_surname" type="text" placeholder="Surname">
+                    </div>
+
+                </fieldset>
+                <br>
+
+                <div class="login_link">
+                    <a href="mainpage.html"><h1>LOGIN</h1></a>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nameInput = document.getElementById('name');
+            const surnameInput = document.getElementById('surname');
+            const loginLink = document.querySelector('.login_link a');
+
+            
+            loginLink.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const surnameValue = surnameInput.value;
+                const nameValue = nameInput.value;
+                const loginDataText = `${surnameValue} ${nameValue}`;
+
+                
+                window.location.href = `mainpage.html?loginData=${encodeURIComponent(loginDataText)}`;
+            });
+        });
+    </script>
+ 
+</body>
+</html>
